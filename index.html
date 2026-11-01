@@ -58,7 +58,7 @@
     .lookup-card .submit:after{content:'↗';font-size:17px;font-weight:400}
     .lookup-card .submit:hover{filter:brightness(1.15)}
     .lookup-card .hint{margin-top:17px;text-align:left;color:#a88b9e;font-size:9px;letter-spacing:.6px}
-    @media(max-width:760px){main:has(.login.active){padding:0 22px}.login.active{grid-template-columns:1fr;gap:26px;align-content:center;min-height:calc(100vh - 58px);padding:42px 0}.login:before{width:90vw;height:90vw;left:-35vw;top:-8%}.hero-copy{padding:0}.hero-index{margin-bottom:18px}.hero-title{font-size:clamp(45px,12vw,68px)}.hero-copy p{font-size:13px;margin-top:15px}.hero-signature{margin-top:22px}.lookup-card{padding:18px 0 0;border-left:0;border-top:1px solid transparent;border-image:linear-gradient(90deg,#9a4059,#7d4d7f 58%,transparent) 1}.lookup-kicker{margin:0 0 17px}.lookup-card p{font-size:23px;margin-bottom:18px}.lookup-card .submit{margin-top:16px}}
+    @media(max-width:760px){main:has(.login.active){padding:0 22px}.login.active{grid-template-columns:1fr;gap:15px;align-content:center;min-height:calc(100vh - 58px);padding:22px 0}.login:before{width:90vw;height:90vw;left:-35vw;top:-8%}.hero-copy{padding:0}.hero-index{margin-bottom:12px}.hero-title{font-size:clamp(38px,8vw,54px);letter-spacing:-1.7px}.hero-copy p{font-size:12px;margin-top:10px}.hero-signature{display:none}.lookup-card{padding:14px 0 0;border-left:0;border-top:1px solid transparent;border-image:linear-gradient(90deg,#9a4059,#7d4d7f 58%,transparent) 1}.lookup-kicker{margin:0 0 12px}.lookup-card p{font-size:21px;margin-bottom:12px}.lookup-card .input input{height:48px}.lookup-card .submit{height:46px;margin-top:12px}.lookup-card .hint{margin-top:10px}}
     @media(max-width:650px){.top{background:#100b15e8}}
   </style>
 </head>
@@ -66,7 +66,7 @@
   <header class="top"><div class="logo">GATHERED <span>· SKYBLOCK SKILL STATS</span></div><div class="topnote">UNOFFICIAL PLAYER TOOL</div></header>
   <main>
     <section class="view login active" id="login">
-      <div class="hero-copy"><div class="hero-index">SKYBLOCK FIELD GUIDE <span>· 01</span></div><h1 class="hero-title">Make every<br><span>gathering run</span>count.</h1><p>One player profile for the skills, gear, and upgrades behind your next run.</p><div class="hero-signature"><b>MINING</b><i></i><b>FISHING</b><i></i><b>FORAGING</b><i></i><b>FARMING</b></div></div>
+      <div class="hero-copy"><div class="hero-index">SKYBLOCK FIELD GUIDE <span>· 01</span></div><h1 class="hero-title">Plan your next<br><span>great run.</span></h1><p>One profile for your mining, fishing, foraging, and farming stats.</p><div class="hero-signature"><b>MINING</b><i></i><b>FISHING</b><i></i><b>FORAGING</b><i></i><b>FARMING</b></div></div>
       <form class="card lookup-card" id="loginForm"><div class="lookup-kicker"><strong>PROFILE ACCESS</strong><span>01 / 01</span></div><p>Who are we tracking?</p><label class="input"><b>⌕</b><input id="username" placeholder="Enter Minecraft username" maxlength="16" autocomplete="off" required pattern="[A-Za-z0-9_]{3,16}" aria-label="Minecraft username"></label><button class="submit" type="submit">Open player profile</button><div class="hint">USERNAME ONLY · NO ACCOUNT LOGIN REQUIRED</div></form>
     </section>
     <section class="view" id="selection">
