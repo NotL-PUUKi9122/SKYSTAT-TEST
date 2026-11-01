@@ -32,6 +32,33 @@
     .upgrade .rank{color:#f0a4ae}.upgrade p,.guide p{color:#d0b5c6}.upgrade strong,.ranknum{color:#f0c08e}.notice{color:#c4a8b8}.prototype{color:#efc394}
     .tag{color:#f0dce8;border-color:#8b5978}.empty{border:1px dashed #946080;color:#e2cadd;background:linear-gradient(130deg,#431d32aa,#2d1c3caa)}
     @media(max-width:650px){.top{background:linear-gradient(90deg,#3b1426f7,#29142ff7 55%,#191226f7)}}
+    /* The entry screen has its own editorial layout, distinct from the stat dashboard. */
+    main:has(.login.active){max-width:1320px;padding:0 5vw}
+    .login.active{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:clamp(34px,8vw,120px);align-items:center;min-height:calc(100vh - 58px);padding:clamp(36px,7vh,82px) 0}
+    .login:before{content:'';position:absolute;width:min(58vw,760px);height:min(58vw,760px);max-width:none;max-height:none;left:-20vw;top:4%;border:1px solid #dd73852c;border-radius:48% 52% 65% 35%;transform:rotate(-18deg);background:radial-gradient(ellipse at 40% 45%,#a72f4d38 0,transparent 60%);box-shadow:none;pointer-events:none}
+    .hero-copy{position:relative;z-index:1;text-align:left;padding:10px 0 26px 3px}
+    .hero-index{display:flex;align-items:center;gap:12px;color:#f0a4ae;font:10px 'DM Mono',monospace;letter-spacing:2.4px;margin-bottom:31px}
+    .hero-index:before{content:'';width:38px;height:1px;background:linear-gradient(90deg,#c53d5e,#9860aa)}
+    .hero-title{max-width:660px;font:500 clamp(43px,6.5vw,82px)/.96 Georgia,'Times New Roman',serif;letter-spacing:-2.6px;margin:0;color:#fff0f2}
+    .hero-title span{display:block;color:transparent;background:linear-gradient(105deg,#f6b0aa 0%,#df7e97 43%,#bd83cd 100%);background-clip:text;-webkit-background-clip:text;font-style:italic;padding:4px 0 9px}
+    .hero-copy p{max-width:410px;color:#d4b3c4;font-size:14px;line-height:1.8;margin:24px 0 0}
+    .hero-signature{display:flex;align-items:center;gap:15px;margin-top:42px;color:#aa899f;font:9px 'DM Mono',monospace;letter-spacing:1.5px}
+    .hero-signature b{font-weight:400;color:#e5b9ca}
+    .hero-signature i{display:block;width:5px;height:5px;background:#d76883;transform:rotate(45deg);box-shadow:0 0 12px #db5d7b}
+    .lookup-card{position:relative;z-index:1;width:100%;padding:0 0 0 25px;text-align:left;border:0;border-left:1px solid transparent;border-image:linear-gradient(180deg,#9a4059,#7d4d7f 58%,transparent) 1;border-radius:0;background:none;box-shadow:none;overflow:visible}
+    .lookup-card:before{display:none}
+    .lookup-kicker{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;color:#c99caf;font:9px 'DM Mono',monospace;letter-spacing:1.8px}
+    .lookup-kicker strong{font-weight:400;color:#f0a5ad}
+    .lookup-card p{font:500 26px/1.2 Georgia,'Times New Roman',serif;color:#fff0f2;margin:0 0 29px}
+    .lookup-card .input b{left:0;top:13px;color:#e8a0a6}
+    .lookup-card .input input{height:55px;border:0;border-bottom:1px solid #986178;border-radius:0;background:linear-gradient(90deg,#52213a77,#37213c40 70%,transparent);padding:0 13px 0 34px;font-size:14px}
+    .lookup-card .input input::placeholder{color:#b699ac}
+    .lookup-card .input input:focus{border-bottom-color:#f0a1a9;box-shadow:0 2px 0 #d8617b;background:linear-gradient(90deg,#66264299,#48264f55 75%,transparent)}
+    .lookup-card .submit{height:52px;margin-top:23px;border-radius:2px;background:linear-gradient(105deg,#8d2444,#a83658 43%,#67386f 100%);box-shadow:0 9px 25px #08040a66,inset 0 1px #ffffff35;text-align:left;padding:0 17px;display:flex;align-items:center;justify-content:space-between}
+    .lookup-card .submit:after{content:'↗';font-size:17px;font-weight:400}
+    .lookup-card .submit:hover{filter:brightness(1.15)}
+    .lookup-card .hint{margin-top:17px;text-align:left;color:#a88b9e;font-size:9px;letter-spacing:.6px}
+    @media(max-width:760px){main:has(.login.active){padding:0 22px}.login.active{grid-template-columns:1fr;gap:26px;align-content:center;min-height:calc(100vh - 58px);padding:42px 0}.login:before{width:90vw;height:90vw;left:-35vw;top:-8%}.hero-copy{padding:0}.hero-index{margin-bottom:18px}.hero-title{font-size:clamp(45px,12vw,68px)}.hero-copy p{font-size:13px;margin-top:15px}.hero-signature{margin-top:22px}.lookup-card{padding:18px 0 0;border-left:0;border-top:1px solid transparent;border-image:linear-gradient(90deg,#9a4059,#7d4d7f 58%,transparent) 1}.lookup-kicker{margin:0 0 17px}.lookup-card p{font-size:23px;margin-bottom:18px}.lookup-card .submit{margin-top:16px}}
     @media(max-width:650px){.top{background:#100b15e8}}
   </style>
 </head>
@@ -39,8 +66,8 @@
   <header class="top"><div class="logo">GATHERED <span>· SKYBLOCK SKILL STATS</span></div><div class="topnote">UNOFFICIAL PLAYER TOOL</div></header>
   <main>
     <section class="view login active" id="login">
-      <div class="wordmark"><span>GATHERED</span><small>SKILL STATS</small></div>
-      <form class="card" id="loginForm"><p>Look up a Hypixel SkyBlock profile</p><label class="input"><b>⌕</b><input id="username" placeholder="Minecraft username" maxlength="16" autocomplete="off" required pattern="[A-Za-z0-9_]{3,16}" aria-label="Minecraft username"></label><button class="submit" type="submit">Search profile</button><div class="hint">Enter a username to continue · No account login required</div></form>
+      <div class="hero-copy"><div class="hero-index">SKYBLOCK FIELD GUIDE <span>· 01</span></div><h1 class="hero-title">Make every<br><span>gathering run</span>count.</h1><p>One player profile for the skills, gear, and upgrades behind your next run.</p><div class="hero-signature"><b>MINING</b><i></i><b>FISHING</b><i></i><b>FORAGING</b><i></i><b>FARMING</b></div></div>
+      <form class="card lookup-card" id="loginForm"><div class="lookup-kicker"><strong>PROFILE ACCESS</strong><span>01 / 01</span></div><p>Who are we tracking?</p><label class="input"><b>⌕</b><input id="username" placeholder="Enter Minecraft username" maxlength="16" autocomplete="off" required pattern="[A-Za-z0-9_]{3,16}" aria-label="Minecraft username"></label><button class="submit" type="submit">Open player profile</button><div class="hint">USERNAME ONLY · NO ACCOUNT LOGIN REQUIRED</div></form>
     </section>
     <section class="view" id="selection">
       <div class="player"><div class="head">☺</div><div><div class="playerName" id="shownName">Player</div><div class="sub">HYPIXEL SKYBLOCK PROFILE · DEMO PREVIEW</div></div><button class="change" id="change">Change username</button></div>
